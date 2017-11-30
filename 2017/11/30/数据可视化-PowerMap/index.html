@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><style>
+  /*.tags0{font-size: 12px !important;color: #ccc !important;}灰*/
+  .tags00{font-size: 12px !important;color: #666 !important;}/*黑*/
+  /*.tags01{font-size: 12px !important;color: rgb(255,128,128) !important;}红
+  .tags02{font-size: 12px !important;color: rgb(128,255,128) !important;}绿
+  .tags03{font-size: 12px !important;color: rgb(128,128,255) !important;}蓝
+  .tags04{font-size: 12px !important;color: rgb(255,216,128) !important;}黄*/
+  /*.tags10{font-size: 20px !important;color: #666 !important;}*/
+  .tags11{font-size: 20px !important;color: rgb(255,128,128) !important;}
+  .tags12{font-size: 20px !important;color: rgb(128,255,128) !important;}
+  .tags13{font-size: 20px !important;color: rgb(128,128,255) !important;}
+  .tags14{font-size: 20px !important;color: rgb(255,216,128) !important;}
+  /*.tags20{font-size: 40px !important;color: #666 !important;}*/
+  .tags21{font-size: 40px !important;color: rgb(255,128,128) !important;}
+  .tags22{font-size: 40px !important;color: rgb(128,255,128) !important;}
+  .tags23{font-size: 40px !important;color: rgb(128,128,255) !important;}
+  .tags24{font-size: 40px !important;color: rgb(255,216,128) !important;}
+  </style>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="usqxN9szwqwiBn6-2_-5zZQGZoVpZ6a7MxbjHyGafXA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大数据,数据可视化," />
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="PowerMap, Excel领域的可视化人间凶器  本文转载微信公众号“一周进步”并适当修改，如有侵权，请联系本人删除。  研究之后发现，微软爸爸这个名字确实是叫的应该。这™真的是黑科技，哦不，人间凶器。 下面两个案例中的所有三维可视化效果，全都是用 Excel 中的PowerMap设计生成的。 -美国万圣节大数据分析-全球二氧化碳排放量  PowerMap 是 Excel 中的一个强大无比的">
+<meta name="keywords" content="大数据,数据可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据可视化-PowerMap">
+<meta property="og:url" content="http://www.yoosen.top/2017/11/30/数据可视化-PowerMap/index.html">
+<meta property="og:site_name" content="花·自飘零">
+<meta property="og:description" content="PowerMap, Excel领域的可视化人间凶器  本文转载微信公众号“一周进步”并适当修改，如有侵权，请联系本人删除。  研究之后发现，微软爸爸这个名字确实是叫的应该。这™真的是黑科技，哦不，人间凶器。 下面两个案例中的所有三维可视化效果，全都是用 Excel 中的PowerMap设计生成的。 -美国万圣节大数据分析-全球二氧化碳排放量  PowerMap 是 Excel 中的一个强大无比的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/lDt9micWnclRiaVzeHsPTETkfvaeY0p6UExtlqcxIpzts7HxfEVaZVxrmefZjYTkx1aYjQmic4jUyYGEc3V94cDmA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55M1L3S3Sfw1WiaaY1BEKkjgVanHluXRSKQj6IkLr4hGmHkiakAuGeqWg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5n2EVYPcTSBYBvdyib4a95oCorwJ1107xYlZZFznNqx5XicnM8Iojq8fg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5syHajgBdvw0HqMgUNsrv6AzpEXgHCd7MoUO9fcQsdgFVJYfU6KQMrw/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5dGSyXwV1LTDUrlFp9Dc0we7d7yFia4SYw0IDSxT4dicVbdGDYfjo4JXw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Piar8V50BEl6CtaPw88UjQUuebUOsVdnKoW3wx6DWHakjQqBiaEB3kMw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5J9V0Vd42N86LHNr46LmTve5IcT7qXkHqFD1KrThZgfjY5kQaFic7HCg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5AfDd1TvicZ6pdbCSc3lXQx1ooYWAJ7e96Z3ARjIFd9M7szC140ich34Q/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5IjwDsdgRhibM0PklLFlgH1khoa9gR52AkUcBqTO6PZpiaNTgEMx2ttEA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5iaLVB0Ik0J3s9CCs13Ggajf7Du8cLoo4iajfsQEZlHszGugxN4icHUib5w/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5icHplBgqSic2DRMicIicgicxE0ibqj8bFcvTzbSBvShHiaa5e0DuGyNMLNJdg/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vXNKy5HaTRcyGx6veXCnkDFqmo0c1HZZhO9RzpOHQYkUjbBEQLXERA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5FftFn1sxEOyh7ua8HRjviaytibZxiaOiaWr3ibr1C81WrzzJhTjic1Hbw1Aw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5v3YpBqfn1NRwud1jE8giaLPeWcvnCicQLzDhxAoxIAV1AohwWqp87ia8w/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vq8cdLkS9XArbJIJU7gsYPDWP7geMklqIG24SlhbefJtTQNgkJu2ibg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5EKndvgcrC2rzt0MdEnDV3rsvt8ZY1AcLJibY8Rqr0ibtveYX59Xz3DsA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5YOhPkIO5BRSyo9k2zwIjboedShALszDdVUH9cf7pde2SLCibchybm6Q/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5qWp9zsbqyXs7Hvya66Rvzop3sgIgicT0GrMAicGarsh2EuBdfoYfFiaSQ/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5W7tUM2dxBB68OAOU6BUSm8d6vEerQyGHOMg0K3or8yic3MZse9f8tFw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE53kuYib0Xn2yJK23SGWuuiaCjib1vuMDMf7G24Kk5AkFb4Af2yFyogko2w/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5UtUPw4OBibibdP2cYstHwE3OdE75oPPutjbwnQQ3W5Po9fv7T6EzoftA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5icBnem8Kn1P99MicWiaiaBHJ4JtibNMc47ibXrdT2Jx6Bib39ZPkfmjgMHa8g/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55TshCghfkY4PQOZN9GQPyXrGqRMpYB2doIOVwETtRSYEnSH6VV6Pag/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5I9YaCv3bxdibSiawSoia7jxwOGziaico5gI7eT4PiciaibPbfwtYqkS5ia4o2yw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5cHfVad3h4LhiceeG5rAWP47tpnBFIPpAnAfyICp4BQ3QiaiaFx2q0XE6g/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5gFHKX4yyCOO8N6UfLZKiaCgdW0gzKfBRSEkHbxrzou8rhhMgSfPC69A/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5AKEREvYJTicStX6VULUW1nr0wdpgms9AiaENJhCOaxGoEw48NIv1EhEA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5SusoI9pZIFggpVlty8xJficaqz5vicUicwHoOH8t1Dn6jLlN0hA3CyRGA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5JqeiczicSez9tFR2iccibR4Fibevn41xCxD5SCibTlBPYqvX6PZ5U2TDjCGg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Xyoqhw12JXGM7b1ZH8MibnC2UZibGhR5lt4NsIquy9JD7TpyKzaKXgBA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55sBPO7RXUk1N9W1Kbg6FDH02N1aHCVJXC7liaKzjpjXiaI5lztee1uHw/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE542SdiaP6T1gpfsjLOtpCWt9QQIxfIib4Q64PQgXHLIuwqeQnUb6lNJ9g/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE516erTSgXMxgFLW8iaPnHssEfcwcAgLUZVh5ib34kpFCia6qjWKNJ8FCVw/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE56QZghUoTIbZBia0kajPMOZLvCvAqoicE6ue4oqSvicuYxS8ib4FN3d6ia2A/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5tX7dbSvHzKBhc6lcVq7rplk80pdIFDWd74egYhhGib6tB0Tqfm4iaxNQ/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5PHsvgePGW60byAmYGW05z5NPSgImgTbtDiaG4DhMfeuxtt6bITAoX5Q/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MGiccJpgwSibc60UakMJ45gxY7JiaUHosxY1QRc8JCfFwCX6z5wfslE6Q/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5sl85KID4RBcb0ia94dw9urIm2Fia0NYHELwAwIx2LYbWDibJYppxW6pmw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE588mG3FKoWDP4tTd3r9NqFagYuLHV1TOKib40Y5SowRmGKbvrWRaJEmg/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vdwXBkaQvl60DBGFEE9Fn2f9icIxI91yDZtiagbJ5hpNv8icriccyYrRwA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5OBJ9ytnMc2ErNmJegk0AK06snNEpmQXibPJ2TnA7V7gGlKFMFMULdnQ/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5y9oB9eIuhl9OluAELSFOeQHH1H3VibeYZ61UicAvUJO04S8GzAYBdT2A/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5QQxtcu3HahB4RjzCBUgvictkMOR8SaplSeYGFwxjhvibemHqzicdPdUjw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5qY6J4MEg039I2GwzCOLiaZ2NAWMFuba8y2OELByHcLQ6psTlfypapow/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5GgBOXVK7l3gaLk79ZrPu9WxnwDE5tjSeWKXjtDYx4kY4dPwC0bpA8g/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Dy0yxibfB8aTqsXRwFJhjsmULlsS3AUl03VqaqJ3Gs4fB98sxibfqDfw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5ZCNqhT9CrNOBvzDE9c38XfiaEA5bqBbolf0O9m2tcVq5NhlbKMEZOgg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE522pnNVC3j8cSn6KsxXodFcYxvlno1iagPzImqgvBHUXg4WE7RGx5pTA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE576mH37JiceUs4a46ic7ibg3TnGntnyRJMr4XO43K4iawvHpK5A5ib5ayS7w/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5n2EVYPcTSBYBvdyib4a95oCorwJ1107xYlZZFznNqx5XicnM8Iojq8fg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55M1L3S3Sfw1WiaaY1BEKkjgVanHluXRSKQj6IkLr4hGmHkiakAuGeqWg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vLLJ1uKCtBAyX6UXrBw7sEerPkoPicPiavaxiaFdpwFsAqQlNvYggicv4g/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5NdjhewBy1WiaC0tV8VptZWQ9icv8vfdXPY2XEgzvvm6QqeFM85U92wdQ/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MicUYXpCDpfezvLUHMhXvcsOSVIxX1ONPwyBWhQ1biaQIWLlMJIrIghg/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vgGqg9YSRlJXGlU3ibkQ3jbKvhqcmianvicaY0Cw0ebgeusSKAp4rM7zw/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5tZlz6RXWVv9DkWKWFOSFTXib2dSMgN12ic7ALh0DQ522IPqkdXUE3EfQ/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5rD21Chdq2CuTT6nRgh09ae3Z3iacfVBZDz3ibkSxNyS16BPG4nTuJjZA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5VqQ5JLdgJwaMGUFn9DgHppMr7LA400nFW9IhrpAjKJkibPYJgiclkBIA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5b8p33ic0cNXIRzNnBQKwEMfIibhTx5fvXWicYHgstowClzct9aGBCXvew/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5M19t13uwS6XWGIcuMOWicKw8NFHGic7ibGRwyHJbzfyKVzOsLPfQEnrqw/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5dCmopkUgeYRDyw2ZlK6ky8bXsqRbQqTJTrn2Pz1qMNVSLVfBMAjYRg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5PDsg3YfsptaJkAJtYgl2N3n2JGrkEOMO6blQ1LqjNtuP1FdFAP0cUQ/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5yIS8xiaZw1fYwPqsAh1E0ic7BoDIDygribeRiaECAY5iaqSoh3Cib6iaicnCfQ/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5m88NnrzkJZLEnr8eknibl5fT0DjZVBvvbwM92icoAXVo2sdnr13Yia1dQ/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5xFB2ibIGrAxnTTaz3SHffImqYC42cvJSBhOpHWAIgwr2qeOLPz15X9g/0?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5CSnXmtoIKCrOvBHBIcq4IbX5MRzWJ9c2v7cIas3wl5wcribUPluhxQg/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MuRSIWQGlxwf4rQp0NCk7cVuKLEtvhGgB4zp0wgTTuqqxzpWqrApPA/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE53a7HT9wxvo2pib91zqNuHYUdibZ25aVXd1DiaKWUXQagpPHhibcMFSr2IQ/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5kgPkKZNgicymRfzxNCD1oaQcgp8Fj4sw2fWNUIyERlK3If7uNKCrUng/640?tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:updated_time" content="2017-11-30T14:33:06.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据可视化-PowerMap">
+<meta name="twitter:description" content="PowerMap, Excel领域的可视化人间凶器  本文转载微信公众号“一周进步”并适当修改，如有侵权，请联系本人删除。  研究之后发现，微软爸爸这个名字确实是叫的应该。这™真的是黑科技，哦不，人间凶器。 下面两个案例中的所有三维可视化效果，全都是用 Excel 中的PowerMap设计生成的。 -美国万圣节大数据分析-全球二氧化碳排放量  PowerMap 是 Excel 中的一个强大无比的">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/lDt9micWnclRiaVzeHsPTETkfvaeY0p6UExtlqcxIpzts7HxfEVaZVxrmefZjYTkx1aYjQmic4jUyYGEc3V94cDmA/640?tp=webp&wxfrom=5&wx_lazy=1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.yoosen.top/2017/11/30/数据可视化-PowerMap/"/>
+
+
+
+
+
+  <title>数据可视化-PowerMap | 花·自飘零</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ae2faba1b73dad6d1be9f46bcac215b8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+<script src="/assets/js/DPlayer.min.js"></script></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花·自飘零</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar-check-o"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-eat">
+          <a href="/eat/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-smile-o"></i> <br />
+            
+            吃什么
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-o"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.yoosen.top/2017/11/30/数据可视化-PowerMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yoosen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花·自飘零">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据可视化-PowerMap</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T21:24:24+08:00">
+                2017-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据/" itemprop="url" rel="index">
+                    <span itemprop="name">数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/30/数据可视化-PowerMap/" class="leancloud_visitors" data-flag-title="数据可视化-PowerMap">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,940
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><h1>PowerMap, Excel领域的可视化人间凶器</h1>
+
+<font color="#FF4500"><strong>本文转载微信公众号“一周进步”并适当修改，如有侵权，请联系本人删除。</strong></font>
+
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/lDt9micWnclRiaVzeHsPTETkfvaeY0p6UExtlqcxIpzts7HxfEVaZVxrmefZjYTkx1aYjQmic4jUyYGEc3V94cDmA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>研究之后发现，微软爸爸这个名字确实是叫的应该。<br>这™真的是黑科技，哦不，人间凶器。</p>
+<p>下面两个案例中的所有三维可视化效果，全都是用 <font color="#FF4500"><strong>Excel</strong></font> 中的<font color="#FF4500">PowerMap</font>设计生成的。</p>
+<p>-美国万圣节大数据分析<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55M1L3S3Sfw1WiaaY1BEKkjgVanHluXRSKQj6IkLr4hGmHkiakAuGeqWg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5n2EVYPcTSBYBvdyib4a95oCorwJ1107xYlZZFznNqx5XicnM8Iojq8fg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>-全球二氧化碳排放量</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5syHajgBdvw0HqMgUNsrv6AzpEXgHCd7MoUO9fcQsdgFVJYfU6KQMrw/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5dGSyXwV1LTDUrlFp9Dc0we7d7yFia4SYw0IDSxT4dicVbdGDYfjo4JXw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>PowerMap 是 <strong>Excel</strong> 中的一个强大无比的大数据地图展现工具。但是操作方式却逆天的简单。</p>
+<p>咳咳…大家冷静一下，我要开始装逼了。</p>
+<h2 id="PowerMap如何使用？"><a href="#PowerMap如何使用？" class="headerlink" title="PowerMap如何使用？"></a>PowerMap如何使用？</h2><p>我们将在实际案例中对 PowerMap 进行讲解，我们所使用的Excel表格数据案例为下图所示。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Piar8V50BEl6CtaPw88UjQUuebUOsVdnKoW3wx6DWHakjQqBiaEB3kMw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>（你达标了么？）</p>
+<h3 id="如何安装？"><a href="#如何安装？" class="headerlink" title="如何安装？"></a>如何安装？</h3><p>-如果你用的版本是 <font color="#FF4500">Office2016</font>，在插入选项卡里面，会有一个<font color="#FF4500">三维地图</font>功能按钮。<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5J9V0Vd42N86LHNr46LmTve5IcT7qXkHqFD1KrThZgfjY5kQaFic7HCg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>-如果你用的版本是 <font color="#FF4500">Office2013</font> ，则需要事先安装一个插件，然后再到插入选项卡里面打开 Map 功能即可。</p>
+<p><a href="http://owvs33wtl.bkt.clouddn.com/exe/Microsoft%20Power%20Map%20Preview%20for%20Excel.exe" target="_blank" rel="external"><font color="#FF4500">点一下我就能下载了</font>，微软官网也有，但是微软官网的打开速度太慢，我帮你下载好了</a></p>
+<p>-如果你用的版本是<font color="#FF4500">2010及以下的版本….</font><br>对不起，你已经被微软这个小婊砸抛弃了。</p>
+<h3 id="如何打开？"><a href="#如何打开？" class="headerlink" title="如何打开？"></a>如何打开？</h3><p>首先我们要拖拽选中我们要展现的数据区域。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5AfDd1TvicZ6pdbCSc3lXQx1ooYWAJ7e96Z3ARjIFd9M7szC140ich34Q/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>然后我们点开这个地图功能按钮，就打开了 PowerMap 界面<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5IjwDsdgRhibM0PklLFlgH1khoa9gR52AkUcBqTO6PZpiaNTgEMx2ttEA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>（啊啊啊啊！！碉堡了！）</p>
+<p>毫无疑问，整个界面里面最抓人眼球的是中间可以无限纵深的三维地球。<br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5iaLVB0Ik0J3s9CCs13Ggajf7Du8cLoo4iajfsQEZlHszGugxN4icHUib5w/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>我们可以使用鼠标拖拽进行视角和空间的转换和移动。<br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5icHplBgqSic2DRMicIicgicxE0ibqj8bFcvTzbSBvShHiaa5e0DuGyNMLNJdg/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>整个三维地球是在线更新的，所以无需担心地名出错的问题。</p>
+<p>PowerMap 提供了12种主题供我们挑选和选择。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vXNKy5HaTRcyGx6veXCnkDFqmo0c1HZZhO9RzpOHQYkUjbBEQLXERA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5FftFn1sxEOyh7ua8HRjviaytibZxiaOiaWr3ibr1C81WrzzJhTjic1Hbw1Aw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5v3YpBqfn1NRwud1jE8giaLPeWcvnCicQLzDhxAoxIAV1AohwWqp87ia8w/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vq8cdLkS9XArbJIJU7gsYPDWP7geMklqIG24SlhbefJtTQNgkJu2ibg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>PowerMap 提供了五种可视化形式供我们选择，分别是堆积柱形图，簇状柱形图，气泡图，热力图和区域，简单列举一些。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5EKndvgcrC2rzt0MdEnDV3rsvt8ZY1AcLJibY8Rqr0ibtveYX59Xz3DsA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5YOhPkIO5BRSyo9k2zwIjboedShALszDdVUH9cf7pde2SLCibchybm6Q/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5qWp9zsbqyXs7Hvya66Rvzop3sgIgicT0GrMAicGarsh2EuBdfoYfFiaSQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<h3 id="如何赋予数据？"><a href="#如何赋予数据？" class="headerlink" title="如何赋予数据？"></a>如何赋予数据？</h3><p>我们以堆积柱形图为例。</p>
+<p>目前整个三维地图是空白的，我们需要对这个地球进行一个数据赋予。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5W7tUM2dxBB68OAOU6BUSm8d6vEerQyGHOMg0K3or8yic3MZse9f8tFw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>我们在右侧的字段列表里面勾选出需要赋予给 PowerMap 的数据。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE53kuYib0Xn2yJK23SGWuuiaCjib1vuMDMf7G24Kk5AkFb4Af2yFyogko2w/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>挨个点击添加字段，选中我们案例中相对应的数据类别就好。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5UtUPw4OBibibdP2cYstHwE3OdE75oPPutjbwnQQ3W5Po9fv7T6EzoftA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<font color="#FF4500">（ 位置-国家  高度-数据  类别-国家 ）</font>
+
+<p>这个时候，PowerMap 会帮我们在地球上自动生成堆积柱形图，颜色是按照国家进行区分。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5icBnem8Kn1P99MicWiaiaBHJ4JtibNMc47ibXrdT2Jx6Bib39ZPkfmjgMHa8g/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>此时，我们可以对生成的柱形图进行一些细微的编辑，我们可以点开图层选项，在里面对图表的高度和厚度进行设置。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55TshCghfkY4PQOZN9GQPyXrGqRMpYB2doIOVwETtRSYEnSH6VV6Pag/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5I9YaCv3bxdibSiawSoia7jxwOGziaico5gI7eT4PiciaibPbfwtYqkS5ia4o2yw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>（恩…我们可以细而长，也可以短而粗）</p>
+<p>PowerMap 强大的地方在于，如果一个可视化效果有局限性，那我们可以任意的叠加多层可视化效果。</p>
+<p>只需要点击字段最上方 <font color="#FF4500">“添加新层”</font><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5cHfVad3h4LhiceeG5rAWP47tpnBFIPpAnAfyICp4BQ3QiaiaFx2q0XE6g/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>比如说我觉得这个时候国家之间的区别不是很明显，那我在新的图层这里设置一个区域可视化效果。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5gFHKX4yyCOO8N6UfLZKiaCgdW0gzKfBRSEkHbxrzou8rhhMgSfPC69A/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>这个时候我们会发现，三维地球上会重新叠加了一层区域效果，这个时候国家之间的区别就鲜明了不少。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5AKEREvYJTicStX6VULUW1nr0wdpgms9AiaENJhCOaxGoEw48NIv1EhEA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>我最后又叠加上了一层热力图可视化效果，具体的操作步骤同上，就不再次赘述了。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5SusoI9pZIFggpVlty8xJficaqz5vicUicwHoOH8t1Dn6jLlN0hA3CyRGA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>三个图层按照需求分别命名如下。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5JqeiczicSez9tFR2iccibR4Fibevn41xCxD5SCibTlBPYqvX6PZ5U2TDjCGg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>这个时候，我们会发现，三维地图上的可视化图表效果基本已经生成完毕了。</p>
+<h3 id="我们来聊聊动画"><a href="#我们来聊聊动画" class="headerlink" title="我们来聊聊动画"></a>我们来聊聊动画</h3><p>PowerMap 提供了一系列堪比电影级的动画效果。<br>我们只要点开<font color="#FF4500">“场景选项”</font>，选择一个合适的效果就可以了。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Xyoqhw12JXGM7b1ZH8MibnC2UZibGhR5lt4NsIquy9JD7TpyKzaKXgBA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>我们可以简单看一下效果：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55sBPO7RXUk1N9W1Kbg6FDH02N1aHCVJXC7liaKzjpjXiaI5lztee1uHw/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>*飞过效果<br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE542SdiaP6T1gpfsjLOtpCWt9QQIxfIib4Q64PQgXHLIuwqeQnUb6lNJ9g/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>*推进效果</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE516erTSgXMxgFLW8iaPnHssEfcwcAgLUZVh5ib34kpFCia6qjWKNJ8FCVw/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>*旋转地球效果</p>
+<p>我们选中了动画之后，设置一个合适的时间和效果选项即可。</p>
+<p>【对比】<br>PowerMap 三维地图最大的优势是在于，我们可以对它很方便的<font color="#FF4500">进行时间和空间上的对比</font>。</p>
+<font color="#FF4500">-时间上的对比</font>
+
+<p>时间上的对比很简单，我们只需要在数据赋予的时候给他赋予一个时间字段。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE56QZghUoTIbZBia0kajPMOZLvCvAqoicE6ue4oqSvicuYxS8ib4FN3d6ia2A/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>然后我们点击播放<br>卧槽！我们会发现PowerMap会以动画的形式按照时间生长表现数据。<br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5tX7dbSvHzKBhc6lcVq7rplk80pdIFDWd74egYhhGib6tB0Tqfm4iaxNQ/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<font color="#FF4500">-空间上的对比</font>
+
+<p>空间上的对比则需要点击<font color="#FF4500">“新场景”</font>，然后复制一个跟原本场景一样的三维地球效果。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5PHsvgePGW60byAmYGW05z5NPSgImgTbtDiaG4DhMfeuxtt6bITAoX5Q/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>这个时候，比如我们需要<font color="#FF4500">对比亚洲与美洲之间的数据</font>。<br>那我们在第一个场景把空间移动到亚洲上空。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MGiccJpgwSibc60UakMJ45gxY7JiaUHosxY1QRc8JCfFwCX6z5wfslE6Q/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>然后来到第二个场景把空间移动到美洲上空。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5sl85KID4RBcb0ia94dw9urIm2Fia0NYHELwAwIx2LYbWDibJYppxW6pmw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>并且给两个场景依次赋予一个动画效果：<font color="#FF4500">圆形</font><br>时候我们点击播放会发现。</p>
+<p>PowerMap 会帮我们自动从亚洲上空移动到美洲上空，无缝切换。<br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE588mG3FKoWDP4tTd3r9NqFagYuLHV1TOKib40Y5SowRmGKbvrWRaJEmg/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>我们也可以把视角深入，比如我想从全球视角，移动到北京，看看北京的情况。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vdwXBkaQvl60DBGFEE9Fn2f9icIxI91yDZtiagbJ5hpNv8icriccyYrRwA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>仅仅把第二个场景把三维地图视野深入到北京这个城市即可。</p>
+<p>效果如图：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5OBJ9ytnMc2ErNmJegk0AK06snNEpmQXibPJ2TnA7V7gGlKFMFMULdnQ/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>（是不是有一种有一种卫星地图的视角穿越感）</p>
+<p>如果我们在新场景里面把三维地图改为平面地图，PowerMap也可以帮你在播放的时候无缝展现。</p>
+<p>PowerMap 除了可以默认的三维地图以外，我们也可以尝试自定义地图。</p>
+<p>定制地图的背景由我们选定图片决定，图表的位置可以根据工作表的经纬度的数据去决定。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5y9oB9eIuhl9OluAELSFOeQHH1H3VibeYZ61UicAvUJO04S8GzAYBdT2A/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5QQxtcu3HahB4RjzCBUgvictkMOR8SaplSeYGFwxjhvibemHqzicdPdUjw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>这个相对于三维地图，自定义地图究竟具体怎么使用呢？</p>
+<p>给一些参考例子<br>1.用直方图表现NBA场上球队在场上具体某个区域得分情况分析<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5qY6J4MEg039I2GwzCOLiaZ2NAWMFuba8y2OELByHcLQ6psTlfypapow/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>2.用热力图表现整个网页具体某个区域点击情况分析<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5GgBOXVK7l3gaLk79ZrPu9WxnwDE5tjSeWKXjtDYx4kY4dPwC0bpA8g/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>3.自定义地图（公园地图，学校地图，咖啡厅）的具体人流量分析<br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5Dy0yxibfB8aTqsXRwFJhjsmULlsS3AUl03VqaqJ3Gs4fB98sxibfqDfw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5ZCNqhT9CrNOBvzDE9c38XfiaEA5bqBbolf0O9m2tcVq5NhlbKMEZOgg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<h2 id="导出视频"><a href="#导出视频" class="headerlink" title="导出视频"></a>导出视频</h2><p>当一切都准备完毕之后，我们可以点击“播放”按钮去播放我们刚刚设置的可视化效果。</p>
+<p>我们也可以点击“生成视频” 去导出一个视频在其他地方使用。</p>
+<h2 id="还能怎么玩？"><a href="#还能怎么玩？" class="headerlink" title="还能怎么玩？"></a>还能怎么玩？</h2><p>作为一个如此逆天的可视化工具，我们来看看大神们有没有什么精彩的创意。</p>
+<p>-@Lukas Steindl 做了一个全球气候变化的动态分析<br><div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://ugcdl.video.gtimg.com/flv/57/227/s0338tdyxfs.m701.mp4?vkey=39B533F58F79E2F18DE008C9700D9D2A0F82FBB02A53A838212839EC9A66333038B72901F1502C8C822E5E6DE2826F41A0347E5319DEDEF186507BC33AA654A796191089014F6418EE3BE1851A94567566B0CCEA782CBFD7054A42906AD2ABAEC17F141CE2198DBCF663F9A1B89B6B98CBB1CA155179087D&br=25&platform=2&fmt=auto&level=0&sdtfrom=v1010&guid=38ec3a39984ca6480728ea67291193ea","pic":"http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE522pnNVC3j8cSn6KsxXodFcYxvlno1iagPzImqgvBHUXg4WE7RGx5pTA/640?tp=webp&wxfrom=5&wx_lazy=1"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo","addition":["https://dplayer.daoapp.io/bilibili?aid=4157142"]}});})()</script></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE522pnNVC3j8cSn6KsxXodFcYxvlno1iagPzImqgvBHUXg4WE7RGx5pTA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE576mH37JiceUs4a46ic7ibg3TnGntnyRJMr4XO43K4iawvHpK5A5ib5ayS7w/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>-万圣节快到了，让PowerMap来告诉你全美国哪个地方万圣节参与人数最多吧<br><div id="dplayer1" class="dplayer" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"http://vliveachy.tc.qq.com/vhot2.qqvideo.tc.qq.com/AT0UeR3tX8cOHd97UfRZLeur-Tc0X7QwRieuLHvWxXqI/q0338z6y0l9.m701.mp4?vkey=27249D9CA4C51C82C8C074274C43AA51C176514695BDC13BF570AB9C91D620A9ACEDE2ACAC555841955FD61DE5814024DFE0300C54D80FEC9FEFCA8698719436D07B0AC058288B0338DCFDD62EC29306D4DD6A83BB895886FD7F8EE990E2929BF05EBF74C57C00BEDCAE0B30F887DFCDB4F3715F07B6EEA7&br=29&platform=2&fmt=auto&level=0&sdtfrom=v1010&guid=38ec3a39984ca6480728ea67291193ea&ocid=2691963052&ocid=659494316"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo","addition":["https://dplayer.daoapp.io/bilibili?aid=4157142"]}});})()</script><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5n2EVYPcTSBYBvdyib4a95oCorwJ1107xYlZZFznNqx5XicnM8Iojq8fg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE55M1L3S3Sfw1WiaaY1BEKkjgVanHluXRSKQj6IkLr4hGmHkiakAuGeqWg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>-华盛顿无家可归的学生数据调研</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vLLJ1uKCtBAyX6UXrBw7sEerPkoPicPiavaxiaFdpwFsAqQlNvYggicv4g/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5NdjhewBy1WiaC0tV8VptZWQ9icv8vfdXPY2XEgzvvm6QqeFM85U92wdQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>-彗星轨迹图</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MicUYXpCDpfezvLUHMhXvcsOSVIxX1ONPwyBWhQ1biaQIWLlMJIrIghg/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5vgGqg9YSRlJXGlU3ibkQ3jbKvhqcmianvicaY0Cw0ebgeusSKAp4rM7zw/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5tZlz6RXWVv9DkWKWFOSFTXib2dSMgN12ic7ALh0DQ522IPqkdXUE3EfQ/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5rD21Chdq2CuTT6nRgh09ae3Z3iacfVBZDz3ibkSxNyS16BPG4nTuJjZA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5VqQ5JLdgJwaMGUFn9DgHppMr7LA400nFW9IhrpAjKJkibPYJgiclkBIA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5b8p33ic0cNXIRzNnBQKwEMfIibhTx5fvXWicYHgstowClzct9aGBCXvew/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br>-近30年美国降水量数据分析</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5M19t13uwS6XWGIcuMOWicKw8NFHGic7ibGRwyHJbzfyKVzOsLPfQEnrqw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5dCmopkUgeYRDyw2ZlK6ky8bXsqRbQqTJTrn2Pz1qMNVSLVfBMAjYRg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5PDsg3YfsptaJkAJtYgl2N3n2JGrkEOMO6blQ1LqjNtuP1FdFAP0cUQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>-白宫预算分析</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5yIS8xiaZw1fYwPqsAh1E0ic7BoDIDygribeRiaECAY5iaqSoh3Cib6iaicnCfQ/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5m88NnrzkJZLEnr8eknibl5fT0DjZVBvvbwM92icoAXVo2sdnr13Yia1dQ/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5xFB2ibIGrAxnTTaz3SHffImqYC42cvJSBhOpHWAIgwr2qeOLPz15X9g/0?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5CSnXmtoIKCrOvBHBIcq4IbX5MRzWJ9c2v7cIas3wl5wcribUPluhxQg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5MuRSIWQGlxwf4rQp0NCk7cVuKLEtvhGgB4zp0wgTTuqqxzpWqrApPA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE53a7HT9wxvo2pib91zqNuHYUdibZ25aVXd1DiaKWUXQagpPHhibcMFSr2IQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="http://mmbiz.qpic.cn/mmbiz_png/OOia1dvCTibEibeLR4qibZkRQkDic133n5WE5kgPkKZNgicymRfzxNCD1oaQcgp8Fj4sw2fWNUIyERlK3If7uNKCrUng/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>-为什么我的电脑安装不了PowerMap插件？<br>请确认你的系统是Win7及以上系统，同时安装了Directx 10.0及以上版本。</p>
+<p>-为什么我的Excel2013找不到PowerMap？<br>1.先安装 PowerMap插件<br>下载地址<a href="https://www.microsoft.com/en-us/download/details.aspx?id=38395" target="_blank" rel="external">https://www.microsoft.com/en-us/download/details.aspx?id=38395</a></p>
+<p>2.安装 Office2016 下载地址自己百度。</p>
+<p>-我的电脑打开 PowerMap 很卡怎么办?<br>把电脑砸掉。</p>
+<p>-为什么我的PPT没有PowerMap？<br>…那是因为你没有用记事本打开…</p>
+<p>-为什么我的电脑没有安装Excel？<br>……好了童鞋，你应该跑错教室了，体育课在旁边。</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+      
+    </div>
+
+    
+
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
+          
+            <a href="/tags/数据可视化/" rel="tag"><i class="fa fa-tag"></i> 数据可视化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/22/校园网问题/" rel="next" title="安徽大学校园网相关问题">
+                <i class="fa fa-chevron-left"></i> 安徽大学校园网相关问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTA1Ny83NjA1"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/uploads/avatar.png"
+              alt="Yoosen" />
+          
+            <p class="site-author-name" itemprop="name">Yoosen</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://t.me/yoosen" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://Message/?Uin=1255254248&websiteName=q-zone.qq.com&Menu=yes1255254248s" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>QQ</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+      </section>
+
+      
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">PowerMap, Excel领域的可视化人间凶器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerMap如何使用？"><span class="nav-number">1.1.</span> <span class="nav-text">PowerMap如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何安装？"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何安装？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打开？"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何打开？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何赋予数据？"><span class="nav-number">1.1.3.</span> <span class="nav-text">如何赋予数据？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们来聊聊动画"><span class="nav-number">1.1.4.</span> <span class="nav-text">我们来聊聊动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出视频"><span class="nav-number">1.2.</span> <span class="nav-text">导出视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还能怎么玩？"><span class="nav-number">1.3.</span> <span class="nav-text">还能怎么玩？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.4.</span> <span class="nav-text">Q&A</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-star"></i>
+  </span>
+  
+  <span class="author" itemprop="copyrightHolder">Yoosen</span>
+  
+
+  
+</div>
+
+<i class="fa fa-user"></i><span id="busuanzi_container_site_pv">
+    <span id="busuanzi_value_site_pv"></span>
+</span>
+</span>
+
+<span class="post-meta-divider">|</span>
+
+
+
+
+<div class="powered-by">
+  Hosted-
+  <a class="theme-link" href="https://pages.coding.me">
+    Coding
+  </a>
+</div>
+
+<span class="post-meta-divider">|</span>
+
+<a href="http://www.miitbeian.gov.cn/">皖ICP备17019382号</a> 
+
+<div>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1264521823'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1264521823' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("PtYVBUhTgcce16KFVEWNGuJW-gzGzoHsz", "dDhAWDHTCxhJrICu181wu3wv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css">e="text/javascript" src="/js/src/love.js"></script>
+<script type="text/javascript">
+var languages = new Array("C","C++","Java","C#","Python","HTML","CSS","JavaScript","SQL");
+var randoms = new Array(4,3,2,1,3,2,1,4,2,1,3,4,1,2,3,4);
+$(document).ready(function(){
+var tags_all = $(".tag-cloud-tags a");
+tags_all.each(function(){
+  var x = parseInt(Math.random()*3);
+  if(x > 0){
+    x = 1;
+  }
+  for(var i = 0;i<languages.length;i++){
+    if($(this).text() == languages[i]){
+        x = 2;
+      break;
+    }
+  }
+  var y =0;
+  if(x != 0){
+    y = parseInt(Math.random()*16);
+    y = randoms[y];
+  }
+  $(this).addClass("tags"+x+y);
+});
+});
+</script>
