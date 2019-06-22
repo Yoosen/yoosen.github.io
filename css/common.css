@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.w {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.hidden-pc{display: block!important;}
+.hidden-m{display: none!important;}	
+
+@media (max-width: 1200px){
+	
+}
+
+@media screen and (max-width: 768px) {
+    .hidden-pc{display: none!important;}
+	.hidden-m{display: block!important;}
+}
+
+@media screen and (max-width: 680px) {
+	
+}
+@media screen and (max-width:360px) {
+	
+}
