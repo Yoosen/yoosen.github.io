@@ -485,7 +485,7 @@ ul,li {
 }
 
 .weui-cells.leavelist .weui-cell.pass {
-	background: #fff url("../images/status-pass.png") right -15px top -30px
+	background: #fff url("../lib/weui/images/status-pass.png") right -15px top -30px
 		no-repeat;
 	background-size: 90px 90px
 }
@@ -744,7 +744,7 @@ ul,li {
 	width: 90px;
 	height: 90px;
 	content: "";
-	background: url("../images/status-pass.png") center center no-repeat;
+	background: url("../lib/weui/images/status-pass.png") center center no-repeat;
 	background-size: 100% 100%
 }
 
@@ -881,7 +881,7 @@ ul,li {
 	content: "";
 	width: 18px;
 	height: 18px;
-	background: #4bd05f url("../images/icon-pass.png") center center
+	background: #4bd05f url("../lib/weui/images/icon-pass.png") center center
 		no-repeat;
 	border-radius: 50%;
 	background-size: 100% 100%
