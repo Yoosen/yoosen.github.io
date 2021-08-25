@@ -281,18 +281,29 @@
 			<div class="footer-copy-space"></div>
 		</div>
 
-		//Yoosen添加脚本
+		<!--
+			@author Yoosen
+			@time 2021.8.25
+			@documentation 添加脚本
+		-->
 		<script>
 		window.onload = function displayDate(){
 			var myDate = new Date();
 			var y = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
 			var m = ("0" + (myDate.getMonth() + 1)).slice(-2); //获取当前月份(0-11,0代表1月)
 			var d = myDate.getDate(); //获取当前日(1-31)
+			
+			var previous = new Date(myDate.getTime()-24*60*60*1000);	//获取前一天
+			var pYear = previous.getFullYear(); //获取前一天完整的年份(4位,1970-????)
+			var pMonth = ("0" + (previous.getMonth() + 1)).slice(-2); //获取前一天的当前月份(0-11,0代表1月)
+			var pDay = previous.getDate(); //获取前一天的当前日(1-31)
+			
 			var startTime = y + "-" + m + "-" + d + " 8时"; //开始时间
 			var endTime = y + "-" + m + "-" + d + " 20时";	//结束时间
-			var applyTime = m + "-" + (d-1) + " 16:35";
-			var checkTime = m + "-" + (d-1) + " 17:25";
-			var passTime = m + "-" + (d-1) + " 20:45";
+			var applyTime =  pMonth + "-" + pDay + " 16:35";
+			var checkTime =  pMonth + "-" + pDay + " 17:25";
+			var passTime =  pMonth + "-" + pDay + " 20:45";
+			
 			document.getElementById("start2").innerHTML= startTime;
 			document.getElementById("end2").innerHTML= endTime;
 			document.getElementById("apply1").innerHTML= applyTime;
