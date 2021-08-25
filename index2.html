@@ -77,10 +77,10 @@
 							<span>所属学院：计算机学院</span>
 							<span>请假类型：私事</span>
 							<span>是否离开学校：离校</span>
-							<span>请假开始时间：2021-08-07 16:00</span>
-							<span>请假结束时间：2021-08-09 16:00</span>
+							<span id="start1">请假开始时间：2021-08-07 16:00</span>
+							<span id="end1">请假结束时间：2021-08-09 16:00</span>
 							<div class="datebox">
-								<span class="date">2020-08-06 10:35:40</span>
+								<span class="date" id="passTime">2020-08-06 10:35:40</span>
 
 								<span class="status">已通过</span>
 
@@ -158,6 +158,21 @@
 			<div class="footer-copy-space"></div>
 		</div>
 
+		//Yoosen添加脚本
+		<script>
+		window.onload = function displayDate(){
+			var myDate = new Date();
+			var y = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+			var m = ("0" + (myDate.getMonth() + 1)).slice(-2); //获取当前月份(0-11,0代表1月)
+			var d = myDate.getDate(); //获取当前日(1-31)
+			var startTime = y + "-" + m + "-" + d + " 8:00"; //开始时间
+			var endTime = y + "-" + m + "-" + d + " 20:00";	//结束时间
+			var passTime = y + "-" + m + "-" + (d-1) + " 20:45";
+			document.getElementById("start1").innerHTML= "请假开始时间："+startTime;
+			document.getElementById("end1").innerHTML= "请假结束时间："+endTime;
+			document.getElementById("passTime").innerHTML= "请假结束时间："+passTime;
+		}
+		</script>
 		<script>
 			$(function() {
 				$('.weui-navbar__item').on('click', function() {
