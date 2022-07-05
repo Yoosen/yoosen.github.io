@@ -489,6 +489,11 @@ ul,li {
 		no-repeat;
 	background-size: 90px 90px
 }
+.weui-cells.leavelist .weui-cell.pass-sx {
+	background: #fff url("../images/status-pass-sx.png") right -15px top -30px
+		no-repeat;
+	background-size: 90px 90px
+}
 
 .weui-cells.leavelist .weui-cell.pass .weui-cell__bd .datebox .status {
 	color: #4bd05f
@@ -791,8 +796,8 @@ ul,li {
 }
 
 .container.leavedetails .leaveinfo .explain {
-	border-top: #ffffff 1px solid;
-	padding: 0px 0px 10px 10px
+	border-top: #f3f3f3 1px solid;
+	padding: 15px 10px 10px 10px
 }
 
 .container.leavedetails .leaveinfo .explain .box {
