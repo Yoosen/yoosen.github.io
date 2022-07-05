@@ -291,12 +291,12 @@
 			var myDate = new Date();
 			var y = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
 			var m = ("0" + (myDate.getMonth() + 1)).slice(-2); //获取当前月份(0-11,0代表1月)
-			var d = myDate.getDate(); //获取当前日(1-31)
+			var d = ("0" + myDate.getDate()).slice(-2); //获取当前日(1-31)
 			
 			var previous = new Date(myDate.getTime()-24*60*60*1000);	//获取前一天
 			var pYear = previous.getFullYear(); //获取前一天完整的年份(4位,1970-????)
 			var pMonth = ("0" + (previous.getMonth() + 1)).slice(-2); //获取前一天的当前月份(0-11,0代表1月)
-			var pDay = previous.getDate(); //获取前一天的当前日(1-31)
+			var pDay = ("0" + previous.getDate()).slice(-2); //获取前一天的当前日(1-31)
 			
 			var startTime = y + "-" + m + "-" + d + " 8时"; //开始时间
 			var endTime = y + "-" + m + "-" + d + " 20时";	//结束时间
